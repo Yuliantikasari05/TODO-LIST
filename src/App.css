@@ -1,0 +1,164 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('backgound.jpg'); /* Ganti path/to/your/image.jpg dengan path gambar Anda */
+  background-size: cover; /* Memastikan gambar menutupi seluruh area */
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+}
+
+.app-container {
+  background-color: #ffffff7a;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  color: #333;
+}
+
+/* Sisanya tetap sama */
+
+
+h1 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: row; /* Change to row to align elements horizontally */
+  justify-content: space-between; /* Space out the elements */
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input[type="text"] {
+  flex: 2;
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.3);
+}
+
+.priority-select, .status-select {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background-color: #141715;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #141715;
+}
+
+.todo-list {
+  margin-top: 20px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin: 0.4rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.todo-item:hover {
+  transform: scale(1.03);
+}
+
+.todo-item.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-item button {
+  padding: 0.6rem 1.2rem;
+  margin-left: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.todo-item button.edit-btn,
+.todo-item button.delete-btn {
+  background-color: #141715; /* Same as Add Todo button */
+  color: white;
+}
+
+.todo-item button.edit-btn:hover,
+.todo-item button.delete-btn:hover {
+  background-color: #141715; /* Same hover effect */
+}
+
+.todo-item input[type="checkbox"] {
+  margin-right: 0.5rem;
+  accent-color: #b0b014;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .input-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  button[type="submit"] {
+    position: static; /* Reset button position for small screens */
+    margin-top: 1rem;
+  }
+
+  .app-container {
+    padding: 1rem;
+  }
+
+  .todo-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .todo-item button {
+    margin-top: 0.5rem;
+    margin-left: 0;
+  }
+}
